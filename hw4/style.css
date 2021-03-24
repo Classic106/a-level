@@ -1,0 +1,164 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-size: 25px;
+}
+/*_______________________level1____________________________________*/
+.level1{
+  background-color: #0d5825;
+  height: 70vh;
+}
+.level1 > div{
+  text-align: center;
+  color: #ffffff;
+  padding-top: 50px;
+}
+.level1 blockquote::before{
+  content: "\201C";
+}
+.level1 blockquote::after{
+  content: "\201D";
+}
+.level1 i{
+  font-style: italic;
+}
+.cards img{
+  width: 150px;
+  display: inline-block;
+  position: relative;
+  padding-top: 2%;
+  z-index: 50;
+  transform-origin: left bottom;
+  transform: rotate(-10deg);
+}
+.cards img:first-child{
+  z-index: 10;
+  left: 11.5%;
+  transform: rotate(-25deg);
+}
+.cards img:last-child{
+  z-index: 100;
+  right: 11.5%;
+  transform: rotate(10deg);
+}
+.cards img:hover{
+  top: -30px;
+}
+/*_______________________level2____________________________________*/
+.level2{
+  background-color: white;
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+}
+.square{
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+#pink{
+  background-color: #ff8989;
+  left: 40%;
+  z-index: 1;
+}
+#pink:hover{
+  z-index: 100;
+}
+#blue{
+  background-color: #7f8bec;
+  left: 45%;
+  top: -40px;
+  z-index: 75;
+}
+#green{
+  background-color: #4cf09b;
+  left: 50%;
+  top: -80px;
+  z-index: 1;
+}
+#green:hover{
+  z-index: 100;
+}
+/*_______________________level3____________________________________*/
+.level3{
+  background-color: #f8a300;
+  width: 100%;
+  font-size: 13px;
+  color: white;
+}
+#menu{
+  background-color: #818181;
+  width: 196px;
+  height: 400px;
+  position: relative;
+  left: -176px;
+  transition: left .5s;
+}
+#menu:hover{
+  left: 0;
+  transition: left .5s;
+}
+#menu:hover .close {
+  opacity: 0;
+  transition: opacity .5s;
+}
+#menu .close{
+  position: relative;
+  left: 26px;
+  display: inline-block;
+  opacity: 1;
+  text-align: center;
+  transform: rotate(90deg);
+  transition: opacity .5s;
+}
+#menu .open{
+  padding: 60px 0px 60px 0px;
+  margin-left: 40px;
+  display: inline-block;
+}
+#menu .open > li::before{
+  content: "";
+  padding: 3px;
+  position: relative;
+  right: 4px;
+  border: solid 2px black;
+  background-color: #f8a300;
+  transform: rotate(45deg);
+  transform-origin: 50%;
+  text-align: center;
+  display: inline-block;
+  animation: circle_animation 10s linear infinite;
+}
+#menu .open li{
+  margin-top: 10px;
+}
+#menu .open li:hover{
+  color: #f8a300;
+}
+@keyframes circle_animation{
+  0%  { transform: rotate(45deg); }
+  100% { transform: rotate(405deg); }
+}
+/*_______________________level4____________________________________*/
+.level4{
+  position: absolute;
+  border: solid black 5px;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.level4 #box{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: box_animation ease-in-out 5s infinite;
+}
+@keyframes box_animation{
+  0%  { transform: translate(0, 0); background-color: red; }
+  25% { transform: translate(0, 390px); background-color: blue; }
+  50% { transform: translate(390px, 390px); background-color: green; }
+  75% { transform: translate(390px, 0); background-color: yellow; }
+  100% { transform: translate(0); background-color: red; }
+}

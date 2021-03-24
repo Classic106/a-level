@@ -1,0 +1,1092 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: 'FREESCPT';
+	src:
+		url('../fonts/FREESCPT.ttf') format('truetype'),
+		url('../fonts/FREESCPT.woff') format('woff'),
+		url('../fonts/FREESCPT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+@import url("../icomoon/style.css");
+h1, p{
+    margin: 0;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+html{
+	font-size: 14px;
+	line-height: 1.2;
+	font-family: "Open Sans", sans-serif;
+}
+body{
+  min-width: 320px;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.container img{
+	padding: 15px;
+}
+nav{
+    display: flex;
+}
+.menu{
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  .menu li{
+    padding: 10px;
+    list-style: none;
+  }
+  .menu > li > a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu > li > a:after{
+    content: "";
+    display: block;
+    align-self: center;
+    height: 2px;
+    width: 50%;
+  }
+  .menu > li > a:hover{
+    color: #5363db;
+  }
+  .menu > li > a:hover:after{
+    background-color: #5363db;
+  }
+  .menu__btn, #menu__toggle{
+    position: relative;
+	  top: 50px;
+	  right: 45px;
+	  z-index: 1;
+	  opacity: 0;
+  }
+  .menu__btn{
+    opacity: 1;
+    z-index: 4;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu {
+    visibility: visible;
+    right: 0;
+    z-index: 2;
+    opacity: 1;
+  }
+  .menu{
+    transition-duration: .25s;
+  }
+  .menu__item {
+    transition-duration: .25s;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 5vh;
+    height: 3px;
+    background-color: #5363db;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -12px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 11px;
+  }
+.menu{
+	display: flex;
+	flex-direction: column;
+	z-index: -1;
+	opacity: 0;
+}
+.reservation{
+  position: relative;
+	display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #5363dbcc;
+}
+.reservation img{
+  position: absolute;
+  width: auto;
+  z-index: -1;
+}
+.reservation_form{
+	display: flex;
+	flex-direction: column;
+  width: 290px;
+	margin: 40px auto 15px;
+	background-color: #fff;
+	border-radius: 18px;
+	padding: 30px;
+  padding-top: 40px;
+  box-shadow: 8px 10px rgba(0,0,0, 0.15);
+}
+.reservation_form h1{
+	color: #5363db;
+  margin-top: -5px;
+  margin-bottom: 10px;
+	text-transform: uppercase;
+	font-size: 25px;
+	background: none;
+}
+.form_input{
+	margin-top: 17px;
+	border-radius: 8px;
+	padding: 17px;
+  padding-left: 10px;
+	border: none;
+	background-color: #f2f2f2;
+}
+#select_menu{
+  margin-top: 15px;
+  padding: 15px;
+  padding-left: 10px;
+}
+.reservation_form :not(:first-child)::placeholder{
+	color: #888;
+}
+.reservation_form :last-child{
+	align-self: flex-end;
+  border-radius: 8px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+	width: 74%;
+  font-size: 16px;
+	color: #fff;
+  border: none;
+	background-color: #5363db;
+	padding: 16px;
+}
+.reservation_text{
+	line-height: 1.5;
+	color: #fff;
+  font-size: 1em;
+	align-self: center;
+	text-align: center;
+  width: 100%;
+}
+.reservation_text h1{
+  padding: 20px;
+  line-height: 45px;
+  margin-top: -4px;
+}
+.reservation_text :last-child{
+  line-height: 35px;
+  font-family: 'FREESCPT', sans-serif;
+  padding: 0 60px 63px;
+  font-size: 2em;
+  margin-top: -3px;
+}
+.yoga_program{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+.yoga_program img{
+  position: relative;
+  top: -16px;
+  height: auto;
+}
+.yoga_program > h1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #5363d8;
+  font-size: 25px;
+  margin-top: 31px;
+  line-height: 35px;
+}
+.yoga_program > h1 > span{
+  font-family: 'FREESCPT', sans-serif;
+  font-size: 41px;
+  color: #999;
+  margin-top: 15px;
+}
+.yoga_program_items{
+  padding: 15px;
+  padding-top: 22px;
+  padding-bottom: 29px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.yoga_program_item{
+  background: #fff;
+  width: 290px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.1);
+  transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+.wrap_yoga_program_image{
+  height: 290px;
+  width: 100%;
+  overflow: hidden;
+}
+.yoga_program_item_description{
+  text-align: left;
+  margin: 30px;
+  margin-bottom: 33px;
+}
+.yoga_program_item_description > h1{
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.yoga_program_item_description > p{
+  padding-top: 27px;
+  line-height: 22px;
+  padding-bottom: 10px;
+}
+.yoga_program_item_description > div{
+  width: max-content;
+  transition: transform .3s ease-in-out;
+}
+.yoga_program_item_description > div > a{
+  text-decoration: none;
+  font-size: 15px;
+  color: #888;
+  transition: transform 2s ease-in-out;
+}
+.yoga_program_item_description > div:hover > a{
+  color: #5363d8;
+}
+.galery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wrap_galery_img{
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrap_galery_img img{
+  width: 100%;
+}
+.icon-search{
+  position: absolute;
+  background: #5363dbcc;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+.about{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 31px 15px;
+}
+.about_inf > h1{
+  color: #5363d8;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 13px;
+  font-size: 25px;
+}
+.about_inf > p{
+  line-height: 0;
+  line-height: 22px;
+}
+.slider{
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  position: relative;
+  min-width: 0;
+}
+.slick-track{
+  display: flex;
+}
+.slick-list{
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.2);
+}
+.slider_btn{
+  position: absolute;
+  top: 40%;
+  z-index: 2;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+.prev{
+  left: -9px;
+}
+.next{
+  right: -9px;
+}
+.icon-angle-right::before{
+  color: #5363d8;
+  display: block;
+  text-align: right;
+  position: relative;
+  top: -3px;
+  right: 8px;
+}
+.icon-angle-left::before{
+  color: #5363d8;
+  display: block;
+  text-align: left;
+  position: relative;
+  top: -3px;
+  left: 8px;
+}
+.health{
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  background: #5363dbcc;
+  padding-bottom: 38px;
+}
+.health > img{
+  position: absolute;
+  width: auto;
+  height: 100%;
+  z-index: -1;
+}
+.health_items{
+  padding: 10px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.health_item{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 28px;
+}
+.health_description{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.health_description > h1{
+  width: 62%;
+  flex-grow: 1;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 25px 30px 11px;
+}
+.health_description > p{
+  line-height: 2;
+  padding: 0 5px;
+}
+.wrap_health_item_image{
+  border-radius: 50%;
+  border: 2px solid #fff;
+  padding: 11px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.wrap_health_item_image > img{
+  height: 100%;
+  width: auto;
+  padding: 6px;
+}
+.health_item:nth-child(2) .wrap_health_item_image{
+  padding: 15px;
+}
+.health_item:nth-child(3) > h1{
+  padding: 0 37px;
+}
+.health_item:nth-child(3) .wrap_health_item_image{
+  padding: 0;
+}
+.health_item:nth-child(6) > h1{
+  padding: 0 2px;
+}
+.health_item:nth-child(6) .wrap_health_item_image{
+  padding: 0;
+}
+.price{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+  padding: 50px 15px 0px;
+}
+.price > img{
+  position: absolute;
+  width: auto;
+  align-self: auto;
+  height: 100%;
+  z-index: -1;
+}
+.price_item{
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  width: 290px;
+  margin-bottom: 30px;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+}
+.price_item_head{
+  align-self: center;
+  background-color: #5363db;
+  width: 100%;
+  padding: 21px;
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 28px;
+  padding-left: 17px;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+}
+.price_item_head span:first-child{
+  margin-top: 9px;
+  font-size: 27px;
+  margin-right: 14px;
+}
+.price_item span:last-child{
+  align-self: flex-end;
+  margin-bottom: 9px;
+  margin-left: 8px;
+  font-size: 18px;
+}
+.price_item > p{
+    align-self: center;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    margin-top: 21px;
+    font-size: 19px;
+}
+.price_item:first-child{
+  margin-top: 50px;
+}
+.price_item:last-child{
+  margin-bottom: 50px;
+}
+.price_item > p:not(:last-of-type):after{
+  content: "";
+  display: block;
+  height: 1px;
+  width: 50%;
+  align-self: center;
+  background-color: #888;
+  margin-top: 21px;
+}
+.button{
+  align-self: center;
+  background-color: #5363db;
+  border-radius: 20px;
+  padding: 16px 0 16px 0;
+  margin-top: 45px;
+  margin-bottom: 53px;
+  color: #fff;
+  width: 59%;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all ease-in-out .3s;
+}
+.button:hover{
+  box-shadow: 0 0 15px #000;
+  background-color: #6b35a1;
+}
+footer{
+  background-color: #5b6ceb;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer > div :nth-child(n){
+    width: 100%;
+}
+footer h1{
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 31px 0 34px 0;
+}
+.footer_socials{
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  width: 50%;
+  padding-top: 15px;
+}
+.footer_about, .footer_contacts{
+  margin: 0 15px 0;
+}
+.footer_socials a{
+  text-decoration: none;
+  color: #fff;
+}
+.footer_socials li{
+  margin: 10px;
+  transition: transform ease-in-out .3s;
+}
+.footer_socials li:hover{
+    transform: scale(2) translateX(15%);
+    color: #0f0;
+}
+.footer_contacts{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.footer_contacts ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer_contacts a{
+  color: #fff;
+  width: max-content;
+  text-decoration: none;
+  transition: transform ease-in-out .3s;
+  margin: 0 0 15px 0;
+}
+.footer_contacts li{
+    width: max-content;
+    margin-bottom: 15px;
+    transition: transform ease-in-out .3s;
+}
+.footer_contacts li:hover{
+    color: #0f0;
+    transform: scale(1.25) translateX(8%);
+}
+.footer_contacts li a:hover{
+    color: #0f0;
+}
+.icon-call{
+    display: flex;
+}
+.icon-call::before{
+    padding-top: 10px;
+    display: block;
+    transition: transform ease-in-out .3s;
+}
+.icon-call ul{
+  list-style-type: none;
+  padding-left: 10px;
+}
+.icon-call li{
+  margin: 0;
+}
+.footer_copy{
+  background-color: #5363d8;
+  width: 100%;
+  text-align: center;
+  padding: 25px 0 25px 0;
+}
+@media (min-width: 576px){
+    .menu__btn{
+      right: 60px;
+    }
+    .yoga_program_item {
+      margin: 20px;
+    }
+    .slider_btn{
+      top: 43%;
+    }
+    .price_item{
+        margin: 50px auto;
+    }
+    .footer_about > .footer_socials{
+        width: 27%;
+    }
+}
+@media (min-width: 768px){
+    .menu__btn, #menu_togglr{
+        opacity: 0;
+        z-index: -1;
+    }
+    .menu{
+        flex-direction: row;
+        z-index: 1;
+        opacity: 1;
+        position: static;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+        align-self: center;
+        padding-right: 50px;
+    }
+    .reservation_form{
+        width: 300px;
+        margin: 50px;
+        margin-right: 80px;
+    }
+    .reservation_text{
+      text-align: left;
+      width: auto;
+    }
+    .reservation_text :first-child{
+        padding: 0;
+        width: 282px;
+    }
+    .reservation_text :last-child{
+        padding: 0;
+        width: 189px;
+    }
+    .yoga_program_item:hover{
+      transform: scale(1.1);
+      box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.5);
+    }
+    .yoga_program_item_description > div:hover{
+      transform: scale(1.1);
+    }
+    .wrap_galery_img{
+      width: 50%;
+    }
+    .wrap_galery_img:hover .icon-search{
+      opacity: 1;
+    }
+    .icon-search::before{
+      display: block;
+      color: #5363db;
+      width: 30px;
+      height: 30px;
+      top: 44%;
+      left: 46%;
+      position: absolute;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 6px;
+      transform: scale(1.3);
+      background: #fff;
+    }
+    .about {
+      padding: 35px;
+    }
+    .health_items{
+      padding: 100px;
+      padding-bottom: 63px;
+    }
+    .health_item {
+      width: 50%;
+      margin-bottom: 25px;
+    }
+    .price_item {
+      margin: 35px auto;
+    }
+    .price_item:first-child, .price_item:last-child{
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    .footer_about{
+        width: 47%;
+        margin: 35px auto 50px 35px;
+    }
+    .footer_about > .footer_socials{
+        width: 35%;
+        margin-top: 75px;
+    }
+    .footer_contacts{
+        flex-direction: row;
+        width: 35%;
+        margin: 35px auto 50px 35px;
+        display: flex;
+        height: 1vh;
+    }
+    .footer_contacts:not(:first-child){
+      width: 43%;
+    }
+}
+@media (min-width: 1024px){
+    .container img{
+        padding: 15px 0 15px 100px;
+    }
+    .reservation_form{
+        margin: 100px;
+    }
+    .reservation_form h1 {
+      font-size: 26px;
+      text-transform: none;
+      letter-spacing: -1px;
+      padding-left: 5px;
+      padding-top: 2px;
+      text-transform: none;
+    }
+    .reservation_text :first-child{
+        padding: 0;
+        width: 482px;
+        line-height: 1.5;
+        font-size: 48px;
+    }
+    .reservation_text :last-child{
+        padding: 0;
+        width: 266px;
+        font-size: 40px;
+    }
+    .yoga_program{
+      padding-top: 57px;
+    }
+    .yoga_program_item{
+      flex-wrap: nowrap;
+      width: 45%;
+    }
+    .wrap_yoga_program_image{
+      height: auto;
+    }
+    .yoga_program img {
+      top: 0;
+      height: 100%;
+      width: auto;
+    }
+    .yoga_program_item_description{
+      width: 100%;
+    }
+    .wrap_galery_img{
+      width: 33.333%;
+    }
+    .about{
+      padding: 60px;
+    }
+    .slider {
+      margin-top: 50px;
+    }
+    .health_item {
+      width: 33.3333%;
+    }
+    .price_item{
+      width: 370px;
+    }
+    .price img{
+      width: 100%;
+    }
+    .price_item_head{
+      font-size: 35px;
+      margin-bottom: 25px;
+      padding: 30px 54px 35px 92px;
+    }
+    .price_item > p{
+      margin-top: 22px;
+      text-align: left;
+      font-size: 19px;
+      padding-left: 73px;
+      width: 100%;
+      letter-spacing: 1px;
+    }
+    .price_item > p:not(:last-of-type):after {
+      width: 100px;
+      align-self: flex-start;
+      margin-top: 21px;
+      margin-left: 63px;
+    }
+    .price_item span:first-child{
+      font-size: 25px;
+      margin-top: 30px;
+      margin-right: 10px;
+    }
+    .price_item span:last-child{
+      font-size: 25px;
+      align-self: center;
+      margin-top: 45px;
+    }
+    .footer_about{
+      width: 44%;
+    }
+    .footer_contacts ul{
+      width: max-content;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .footer_contacts > ul :nth-child(n){
+      width: 45%;
+    }
+    .contacts .icon-location{
+      display: flex;
+    }
+    .contacts .icon-location a{
+      display: flex;
+      margin-left: 10px;
+      width: max-content;
+      align-content: flex-end;
+      flex-direction: column;
+    }
+    .icon-call .phones{
+      display: flex;
+      flex-direction: column;
+    }
+    .icon-call .phones li{
+      width: max-content;
+    }
+    .icon-location a span{
+      margin-top: 10px;
+    }
+    .phones > li{
+      margin-bottom: 10px;
+    }
+    .footer_copy{
+      font-size: 16.5px;
+      padding: 40px 0 40px 0;
+    }
+}
+@media (min-width: 1200px){
+  .about{
+    padding: 115px;
+    padding-bottom: 155px;
+  }
+  .about_inf{
+    width: 45%;
+    margin-top: 77px;
+    width: 42%;
+  }
+  .about_inf > h1{
+    font-size: 31px;
+  }
+  .slider {
+    margin-top: 50px;
+    margin-right: -13px;
+    width: 51%;
+  }
+  .slider_btn{
+    top: 41.5%;
+    font-size: 40px;
+    width: 46px;
+    height: 46px;
+  }
+  .prev{
+    left: -11px;
+  }
+  .next{
+    right: -11px;
+  }
+  .icon-angle-right::before{
+    top: -1px;
+    right: 15px;
+  }
+  .icon-angle-left::before{
+    top: -1px;
+    left: 15px;
+  }
+}
+@media (min-width: 1400px){
+    .wrapper{
+       max-width: 1600px;
+       margin: auto;
+    }
+    .container img{
+      padding: 15px 0 15px 115px;
+    }
+    .menu{
+        padding-right: 105px;
+    }
+    .menu li{
+        padding: 13px;
+    }
+    .button{
+      width: 168px;
+    }
+    .reservation_form{
+      width: 300px;
+      margin: 100px;
+      margin-left: 182px;
+      margin-bottom: 105px;
+    }
+    .reservation_form :last-child{
+      width: 70%;
+    }
+    .reservation_text {
+      margin-top: -67px;
+      margin-left: -5px;
+    }
+    .reservation_text :first-child{
+      width: 482px;
+      position: relative;
+      top: 8px;
+      line-height: 1.5;
+      font-size: 48px;
+    }
+    .reservation_text :last-child{
+      position: relative;
+      width: 266px;
+      top: 38px;
+      line-height: 46px;
+      font-size: 40px;
+    }
+    .yoga_program{
+      padding-top: 90px;
+      padding-bottom: 200px;
+    }
+    .yoga_program_items{
+      padding: 0;
+      padding-top: 56px;
+    }
+    .yoga_program > h1{
+      letter-spacing: 3px;
+    }
+    .yoga_program > h1 > span{
+      letter-spacing: 0;
+    }
+    .yoga_program_item{
+      width: 41%;
+      margin: 12px;
+    }
+    .yoga_program_item_description {
+      width: 92%;
+      margin: 0;
+      padding-top: 48px;
+    }
+    .yoga_program_item_description > p{
+      padding-right: 40px;
+    }
+    .wrap_galery_img{
+      width: 25%;
+    }
+    .health_item:nth-child(3) .health_description > h1,
+    .health_item:nth-child(4) .health_description > h1,
+    .health_item:nth-child(5) .health_description > h1
+    {
+      padding: 0 35px 0 35px;
+    }
+    .health_item {
+      width: 25%;
+    }
+    .health_item {
+      margin-bottom: 0;
+    }
+    .price_item_head{
+      padding: 30px 69px 35px 102px;
+    }
+    .price_item span:first-child{
+      font-size: 30px;
+      margin-top: 26px;
+      margin-right: 15px;
+    }
+    .price_item span:last-child{
+      font-size: 18px;
+      margin-top: 48px;
+    }
+    .price{
+      padding: 64px 100px 70px;
+    }
+    .price_item{
+        width: 370px;
+        margin: auto;
+    }
+    footer h1 {
+      text-transform: uppercase;
+      font-size: 18px;
+      margin: 0px 0 55px 0;
+    }
+  .footer_socials li{
+    transform: scale(1.5);
+    margin: 0;
+    margin-right: 10px;
+  }
+  .footer_about{
+      width: 40%;
+      margin: 95px auto 110px 115px;;
+  }
+  .footer_about > .footer_socials{
+    width: 35%;
+    margin-top: 64px;
+  }
+  .footer_contacts{
+    width: 43%;
+    margin: 95px auto 26px -43px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer_contacts > h1{
+    margin-bottom: 67px;
+  }
+  .footer_contacts .contacts > li{
+    margin-bottom: 13px;
+  }
+  .footer_contacts .contacts > li::before{
+    display: block;
+    transform: scale(1.5);
+    margin-right: 12px;
+  }
+  .footer_contacts .contacts > li:nth-child(2n){
+    display: flex;
+    margin-left: 40px;
+  }
+  .footer_contacts .contacts > li > a{
+    margin-top: -12px;
+    font-size: 15px;
+  }
+  .icon-location a span{
+    margin-top: 10px;
+  }
+  .phones > li{
+    margin-bottom: 10px;
+  }
+  .contacts .icon-planet{
+    margin-top: 9px;  
+  }
+}
